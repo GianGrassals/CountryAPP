@@ -1,0 +1,29 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>Capital</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <app-country-input
+      (onEnter)="search( $event )"
+      (onDebounce)="suggestion()"
+      placeholder="Search Capital..."></app-country-input>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<div class="alert alert-danger"
+     *ngIf="error" >
+  No se encontro nada con el termino {{ term }}
+</div>
+
+<div class="row">
+  <div class="col">
+
+    <app-country-table [countrys]="countrys"></app-country-table>
+
+  </div>
+</div>
